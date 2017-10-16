@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace NhapDanhMucIICD
 {
-    public partial class ThemControl : UserControl
+    public partial class PopupTable : UserControl
     {
-        public ThemControl()
+        public PopupTable()
         {
             InitializeComponent();
-            loadUserControl();
         }
 
-        private void loadUserControl()
+        public void setDataSource(DataTable dt)
         {
-            TextboxControl tbc01 = new TextboxControl();
-
-            tableLayoutPanel1.Controls.Add(tbc01, 0, 0);
-            tbc01.Dock = DockStyle.Fill;
+            this.dataGridView1.DataSource = dt;
         }
     }
 }
