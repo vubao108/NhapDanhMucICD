@@ -92,14 +92,14 @@
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(346, 20);
+            this.textBox1.Size = new System.Drawing.Size(347, 20);
             this.textBox1.TabIndex = 2;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(355, 3);
+            this.button2.Location = new System.Drawing.Point(356, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Size = new System.Drawing.Size(75, 20);
             this.button2.TabIndex = 3;
             this.button2.Text = "Chon ICD";
             this.button2.UseVisualStyleBackColor = true;

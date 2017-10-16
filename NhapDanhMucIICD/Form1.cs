@@ -13,7 +13,7 @@ namespace NhapDanhMucIICD
     public partial class Form1 : Form
     {
         private PopupForm pform;
-        TextboxControl tbControl;
+        //TextboxControl tbControl;
         public Form1()
         {
             InitializeComponent();

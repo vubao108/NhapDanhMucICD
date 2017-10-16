@@ -17,17 +17,29 @@ namespace NhapDanhMucIICD
         {
             Table = new PopupTable();
             InitializeComponent();
+            loadPopup();
         }
 
         public PopupTable Table { get => table; set => table = value; }
 
         private void PopupForm_Load(object sender, EventArgs e)
         {
+           
             
 
-            //this.Controls.Add(Table);
+           
             //table.Dock = DockStyle.Fill;
+
         }
-        
+        private void loadPopup()
+        {
+            splitContainer1.Panel1.Controls.Add(Table);
+            Table.Dock = DockStyle.Fill;
+        }
+
+        private void btChon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
