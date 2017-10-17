@@ -12,6 +12,7 @@ namespace NhapDanhMucIICD
 {
     public partial class PopupTable : UserControl
     {
+        public DataGridView Table => dataGridView1;
         public PopupTable()
         {
             InitializeComponent();
@@ -20,6 +21,15 @@ namespace NhapDanhMucIICD
         public void setDataSource(DataTable dt)
         {
             this.dataGridView1.DataSource = dt;
+        }
+        public void loadCheckBoxColumn(string namestr)
+        {
+            DataGridViewCheckBoxColumn cc = new DataGridViewCheckBoxColumn();
+            cc.ValueType = typeof(bool);
+            cc.Name = namestr;
+            cc.HeaderText = " ";
+            cc.Width = 30;
+            dataGridView1.Columns.Add(cc);
         }
     }
 }

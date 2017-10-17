@@ -30,12 +30,15 @@ namespace NhapDanhMucIICD
 
             DataTable dt1 = DBConnection.GetDataByQuery($"call hth_vu_lay_danh_sach_icd_xet_nghiem('42007')");
             this.DataGridView1.DataSource = dt1;
+            this.DataGridView1.Columns["tên xét nghiệm"].Width = 300;
         }
         private void displayPopup()
         {
             pform = new PopupForm();
             DataTable dt = DBConnection.GetDataByQuery($"call hth_vu_tim_xet_nghiem('{tbc01.Text}','42007')");
+            pform.Table.loadCheckBoxColumn("check");
             pform.Table.setDataSource(dt);
+            pform.Table.Table.Columns["TEN_XETNGHIEM"].Width = 300;
             pform.ShowDialog();
         }
 
