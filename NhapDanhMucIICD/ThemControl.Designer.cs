@@ -32,22 +32,22 @@ namespace NhapDanhMucIICD
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.DataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDanhmuctong = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.DataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.DataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvXNdachon = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhmuctong)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXNdachon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,7 +65,7 @@ namespace NhapDanhMucIICD
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage1.Controls.Add(this.DataGridView1);
+            this.tabPage1.Controls.Add(this.dgvDanhmuctong);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -74,20 +74,16 @@ namespace NhapDanhMucIICD
             this.tabPage1.Text = "Danh mục icd-xét nghiệm";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvDanhmuctong
             // 
-            this.DataGridView1.AllowUserToAddRows = false;
-            this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.DataGridView1.Name = "dataGridView1";
-            this.DataGridView1.ReadOnly = true;
-            this.DataGridView1.Size = new System.Drawing.Size(560, 350);
-            this.DataGridView1.TabIndex = 0;
+            this.dgvDanhmuctong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDanhmuctong.Location = new System.Drawing.Point(3, 3);
+            this.dgvDanhmuctong.Name = "dgvDanhmuctong";
+            this.dgvDanhmuctong.Size = new System.Drawing.Size(560, 350);
+            this.dgvDanhmuctong.TabIndex = 0;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.DataGridView3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -95,17 +91,6 @@ namespace NhapDanhMucIICD
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đã có";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView3
-            // 
-            this.DataGridView3.AllowUserToAddRows = false;
-            this.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.DataGridView3.Name = "dataGridView3";
-            this.DataGridView3.ReadOnly = true;
-            this.DataGridView3.Size = new System.Drawing.Size(562, 352);
-            this.DataGridView3.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -121,51 +106,70 @@ namespace NhapDanhMucIICD
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.74021F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.25979F));
-            this.tableLayoutPanel1.Controls.Add(this.DataGridView2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.dgvXNdachon, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btThem, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.46809F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.53191F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 352);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView2
+            // dgvXNdachon
             // 
-            this.DataGridView2.AllowUserToAddRows = false;
-            this.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.DataGridView2, 2);
-            this.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridView2.Location = new System.Drawing.Point(3, 47);
-            this.DataGridView2.Name = "dataGridView2";
-            this.DataGridView2.Size = new System.Drawing.Size(556, 260);
-            this.DataGridView2.TabIndex = 0;
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvXNdachon, 2);
+            this.dgvXNdachon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvXNdachon.Location = new System.Drawing.Point(3, 72);
+            this.dgvXNdachon.Name = "dgvXNdachon";
+            this.dgvXNdachon.Size = new System.Drawing.Size(556, 277);
+            this.dgvXNdachon.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 310);
+            this.label1.Location = new System.Drawing.Point(83, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(458, 42);
+            this.label1.Size = new System.Drawing.Size(476, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // btThem
             // 
-            this.button1.Location = new System.Drawing.Point(467, 313);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btThem.Location = new System.Drawing.Point(3, 30);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(74, 36);
+            this.btThem.TabIndex = 2;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 27);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tìm XN";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ThemControl
             // 
@@ -176,13 +180,12 @@ namespace NhapDanhMucIICD
             this.Size = new System.Drawing.Size(576, 384);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhmuctong)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXNdachon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,17 +194,18 @@ namespace NhapDanhMucIICD
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDanhmuctong;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvXNdachon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btThem;
+        private Label label2;
 
-        public DataGridView DataGridView1 { get => dataGridView1;  private set => dataGridView1 = value; }
+        public DataGridView DgvDanhmuctong { get => dgvDanhmuctong;  private set => dgvDanhmuctong = value; }
         public DataGridView DataGridView3 { get => dataGridView3; private set => dataGridView3 = value; }
-        public DataGridView DataGridView2 { get => dataGridView2; private set => dataGridView2 = value; }
+        public DataGridView DgvXNdachon { get => dgvXNdachon; private set => dgvXNdachon = value; }
     }
 }

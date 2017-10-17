@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.lb_icd_dachon = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tcDanhMuc.SuspendLayout();
             this.SuspendLayout();
@@ -43,20 +44,19 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15.63218F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.36781F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.tcDanhMuc, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lb_icd_dachon, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(435, 341);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.tcDanhMuc.Location = new System.Drawing.Point(3, 59);
             this.tcDanhMuc.Name = "tcDanhMuc";
             this.tcDanhMuc.SelectedIndex = 0;
-            this.tcDanhMuc.Size = new System.Drawing.Size(429, 279);
+            this.tcDanhMuc.Size = new System.Drawing.Size(432, 279);
             this.tcDanhMuc.TabIndex = 1;
             // 
             // tabPage2
@@ -78,7 +78,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(421, 253);
+            this.tabPage2.Size = new System.Drawing.Size(424, 253);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Xét nghiệm";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(421, 253);
+            this.tabPage3.Size = new System.Drawing.Size(424, 253);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "chẩn đoán hình ảnh";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -96,20 +96,22 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(70, 3);
+            this.textBox1.Location = new System.Drawing.Point(63, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(362, 20);
+            this.textBox1.Size = new System.Drawing.Size(372, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(54, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Đã chọn: ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -117,10 +119,10 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 27);
+            this.label2.Size = new System.Drawing.Size(54, 27);
             this.label2.TabIndex = 5;
             this.label2.Text = "Chọn ICD";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button2
             // 
@@ -130,6 +132,16 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Chon ICD";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // lb_icd_dachon
+            // 
+            this.lb_icd_dachon.AutoSize = true;
+            this.lb_icd_dachon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_icd_dachon.Location = new System.Drawing.Point(63, 27);
+            this.lb_icd_dachon.Name = "lb_icd_dachon";
+            this.lb_icd_dachon.Size = new System.Drawing.Size(372, 29);
+            this.lb_icd_dachon.TabIndex = 6;
+            this.lb_icd_dachon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -156,6 +168,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_icd_dachon;
     }
 }
 

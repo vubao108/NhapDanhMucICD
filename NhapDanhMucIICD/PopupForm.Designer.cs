@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btHuy = new System.Windows.Forms.Button();
+            this.btChon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -45,29 +45,31 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.btHuy);
+            this.splitContainer1.Panel2.Controls.Add(this.btChon);
             this.splitContainer1.Size = new System.Drawing.Size(430, 326);
             this.splitContainer1.SplitterDistance = 267;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btHuy
+            // 
+            this.btHuy.Location = new System.Drawing.Point(242, 20);
+            this.btHuy.Name = "btHuy";
+            this.btHuy.Size = new System.Drawing.Size(84, 23);
+            this.btHuy.TabIndex = 1;
+            this.btHuy.Text = "Hủy";
+            this.btHuy.UseVisualStyleBackColor = true;
+            this.btHuy.Click += new System.EventHandler(this.btHuy_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Chọn";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(242, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btChon.Location = new System.Drawing.Point(93, 20);
+            this.btChon.Name = "button1";
+            this.btChon.Size = new System.Drawing.Size(90, 23);
+            this.btChon.TabIndex = 0;
+            this.btChon.Text = "Chọn";
+            this.btChon.UseVisualStyleBackColor = true;
+            this.btChon.Click += new System.EventHandler(this.btChon_Click);
             // 
             // PopupForm
             // 
@@ -89,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btHuy;
+        private System.Windows.Forms.Button btChon;
     }
 }

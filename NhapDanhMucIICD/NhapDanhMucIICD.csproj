@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Canlamsang.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="DelegateChon.cs" />
     <Compile Include="DelegateDisplayPopup.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

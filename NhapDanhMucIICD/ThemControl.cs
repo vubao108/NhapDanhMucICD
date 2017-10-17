@@ -14,10 +14,14 @@ namespace NhapDanhMucIICD
     {
         private PopupForm pform;
         private TextboxControl tbc01;
+        private BindingList<Canlamsang> blist;
         public ThemControl()
         {
             InitializeComponent();
             loadUserControl();
+            blist = new BindingList<Canlamsang>();
+            DgvXNdachon.DataSource = blist;
+           // DgvXNdachon.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void loadUserControl()
@@ -25,23 +29,37 @@ namespace NhapDanhMucIICD
             
              tbc01 = new TextboxControl();
             tbc01.delDisplayPopup = displayPopup;
-            tableLayoutPanel1.Controls.Add(tbc01, 0, 0);
+            tableLayoutPanel1.Controls.Add(tbc01, 1, 0);
             tbc01.Dock = DockStyle.Fill;
 
             DataTable dt1 = DBConnection.GetDataByQuery($"call hth_vu_lay_danh_sach_icd_xet_nghiem('42007')");
-            this.DataGridView1.DataSource = dt1;
-            this.DataGridView1.Columns["tên xét nghiệm"].Width = 300;
+            this.DgvDanhmuctong.DataSource = dt1;
+            this.DgvDanhmuctong.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void displayPopup()
         {
             pform = new PopupForm();
+            pform.hanleChon = handleChon;
             DataTable dt = DBConnection.GetDataByQuery($"call hth_vu_tim_xet_nghiem('{tbc01.Text}','42007')");
             pform.Table.loadCheckBoxColumn("check");
             pform.Table.setDataSource(dt);
-            pform.Table.Table.Columns["TEN_XETNGHIEM"].Width = 300;
+            pform.Table.Table.Columns["tên xét nghiệm"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             pform.ShowDialog();
         }
+        private void handleChon(List<object> list)
+        {
+            foreach(object o in list)
+            {
+                if(o is Canlamsang)
+                {
+                    blist.Add(o as Canlamsang);
+                }
+            }
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
