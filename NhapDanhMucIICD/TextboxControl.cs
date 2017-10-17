@@ -12,6 +12,8 @@ namespace NhapDanhMucIICD
 {
     public partial class TextboxControl : UserControl
     {
+        public override String Text => textBox1.Text;
+
         public DelegateDisplayPopup delDisplayPopup;
         public TextboxControl()
         {

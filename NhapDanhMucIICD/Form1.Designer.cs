@@ -99,7 +99,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(356, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Size = new System.Drawing.Size(75, 20);
             this.button2.TabIndex = 3;
             this.button2.Text = "Chon ICD";
             this.button2.UseVisualStyleBackColor = true;
