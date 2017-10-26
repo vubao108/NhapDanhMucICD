@@ -32,11 +32,11 @@
             this.tcDanhMuc = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbICD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.lb_icd_dachon = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tcDanhMuc.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.tcDanhMuc, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbICD, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lb_icd_dachon, 1, 1);
@@ -93,13 +93,14 @@
             this.tabPage3.Text = "chẩn đoán hình ảnh";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbICD
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(63, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbICD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbICD.Location = new System.Drawing.Point(63, 3);
+            this.tbICD.Name = "tbICD";
+            this.tbICD.Size = new System.Drawing.Size(372, 20);
+            this.tbICD.TabIndex = 2;
+            this.tbICD.TextChanged += new System.EventHandler(this.tbICD_TextChanged);
             // 
             // label1
             // 
@@ -124,15 +125,6 @@
             this.label2.Text = "Chọn ICD";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(36, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 1);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Chon ICD";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // lb_icd_dachon
             // 
             this.lb_icd_dachon.AutoSize = true;
@@ -142,6 +134,15 @@
             this.lb_icd_dachon.Size = new System.Drawing.Size(372, 29);
             this.lb_icd_dachon.TabIndex = 6;
             this.lb_icd_dachon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(36, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 1);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Chon ICD";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -158,17 +159,21 @@
 
         }
 
+        
+
+
+
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TabControl tcDanhMuc;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb_icd_dachon;
+        private System.Windows.Forms.TextBox tbICD;
     }
 }
 

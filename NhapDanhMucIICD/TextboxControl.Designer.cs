@@ -39,7 +39,7 @@ namespace NhapDanhMucIICD
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
+            this.textBox1.Size = new System.Drawing.Size(198, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
@@ -49,7 +49,7 @@ namespace NhapDanhMucIICD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBox1);
             this.Name = "TextboxControl";
-            this.Size = new System.Drawing.Size(184, 21);
+            this.Size = new System.Drawing.Size(198, 20);
             this.ResumeLayout(false);
             this.PerformLayout();
 

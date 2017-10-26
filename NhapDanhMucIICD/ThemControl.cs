@@ -11,7 +11,12 @@ using System.Windows.Forms;
 namespace NhapDanhMucIICD
 {
     public partial class ThemControl : UserControl
+
+
     {
+        public delegate int DelThem(BindingList<Canlamsang> list);
+        public DelThem delThemHandler;
+
         private PopupForm pform;
         private TextboxControl tbc01;
         private BindingList<Canlamsang> blist;
@@ -21,7 +26,7 @@ namespace NhapDanhMucIICD
             loadUserControl();
             blist = new BindingList<Canlamsang>();
             DgvXNdachon.DataSource = blist;
-           // DgvXNdachon.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DgvXNdachon.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void loadUserControl()
@@ -43,7 +48,7 @@ namespace NhapDanhMucIICD
             DataTable dt = DBConnection.GetDataByQuery($"call hth_vu_tim_xet_nghiem('{tbc01.Text}','42007')");
             pform.Table.loadCheckBoxColumn("check");
             pform.Table.setDataSource(dt);
-            pform.Table.Table.Columns["tên xét nghiệm"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            pform.Table.Table.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             pform.ShowDialog();
         }
         private void handleChon(List<object> list)
@@ -59,6 +64,24 @@ namespace NhapDanhMucIICD
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            int result = delThemHandler(blist);
+            if (result == 0)
+            {
+                lbThemResult.Text = "da them thanh cong";
+                blist.Clear();
+
+                DataTable dt1 = DBConnection.GetDataByQuery($"call hth_vu_lay_danh_sach_icd_xet_nghiem('42007')");
+                this.DgvDanhmuctong.DataSource = dt1;
+            }
+            else
+            {
+                lbThemResult.Text = "chọn bệnh đã";
+            }
 
         }
     }

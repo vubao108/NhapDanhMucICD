@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NhapDanhMucIICD
 {
-    public delegate void DelegateChon(List<object> list);
-
-   
+    class MyDataGridView : DataGridView
+    {
+        
+    }
 }

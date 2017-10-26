@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24FE1E7E-772A-4D3C-AAF6-28F43850CDD1}</ProjectGuid>
+    <ProjectGuid>{8A6CCAA0-3555-49A5-9016-881B5A175B8F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NhapDanhMucIICD</RootNamespace>
-    <AssemblyName>NhapDanhMucIICD</AssemblyName>
+    <RootNamespace>TestApp</RootNamespace>
+    <AssemblyName>TestApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,14 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,53 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Canlamsang.cs" />
-    <Compile Include="DataGridView_ThemXoa.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DBConnection.cs" />
-    <Compile Include="DelegateChon.cs" />
-    <Compile Include="DelegateDisplayPopup.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopupForm.Designer.cs">
-      <DependentUpon>PopupForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopupTable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PopupTable.Designer.cs">
-      <DependentUpon>PopupTable.cs</DependentUpon>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextboxControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextboxControl.Designer.cs">
-      <DependentUpon>TextboxControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThemControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ThemControl.Designer.cs">
-      <DependentUpon>ThemControl.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopupForm.resx">
-      <DependentUpon>PopupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopupTable.resx">
-      <DependentUpon>PopupTable.cs</DependentUpon>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,13 +65,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TextboxControl.resx">
-      <DependentUpon>TextboxControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThemControl.resx">
-      <DependentUpon>ThemControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SubmitButton\SubmitButton.csproj">
+      <Project>{5F528912-C258-4A50-A01D-A5F88C3ECA4F}</Project>
+      <Name>SubmitButton</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

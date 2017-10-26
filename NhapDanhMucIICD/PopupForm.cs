@@ -47,12 +47,12 @@ namespace NhapDanhMucIICD
                 DataGridViewCheckBoxCell cb = (DataGridViewCheckBoxCell)r.Cells["check"];
                 if(cb.Value != null && (bool)cb.Value)
                 {
-                    string maxn = r.Cells["mã"].Value.ToString();
-                    string tenxn = r.Cells["tên xét nghiệm"].Value.ToString();
+                    string ma = r.Cells[1].Value.ToString();
+                    string ten = r.Cells[2].Value.ToString();
                     Canlamsang c = new Canlamsang
                     {
-                        Maso = int.Parse(maxn),
-                        Ten = tenxn
+                        Maso = ma,
+                        Ten = ten
 
                     };
                     list.Add(c);
