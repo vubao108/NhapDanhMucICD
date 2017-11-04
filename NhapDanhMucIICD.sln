@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhapDanhMucIICD", "NhapDanhMucIICD\NhapDanhMucIICD.csproj", "{24FE1E7E-772A-4D3C-AAF6-28F43850CDD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainFormICD", "MainFormICD\MainFormICD.csproj", "{4D560DDD-E108-492F-8570-D7D92C041561}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{24FE1E7E-772A-4D3C-AAF6-28F43850CDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24FE1E7E-772A-4D3C-AAF6-28F43850CDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24FE1E7E-772A-4D3C-AAF6-28F43850CDD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D560DDD-E108-492F-8570-D7D92C041561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D560DDD-E108-492F-8570-D7D92C041561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D560DDD-E108-492F-8570-D7D92C041561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D560DDD-E108-492F-8570-D7D92C041561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

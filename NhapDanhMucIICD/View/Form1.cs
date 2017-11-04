@@ -13,6 +13,13 @@ namespace NhapDanhMucIICD
     public partial class Form1 : Form
     {
         private string madonvi = "42007";
+        public String Madonvi
+        {
+            set
+            {
+                madonvi = value;
+            }
+        }
         private PopupForm pform;
         //TextboxControl tbControl;
         public Form1()

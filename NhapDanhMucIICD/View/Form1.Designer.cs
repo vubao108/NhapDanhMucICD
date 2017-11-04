@@ -58,7 +58,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(435, 341);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(505, 341);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tcDanhMuc
@@ -70,7 +70,7 @@
             this.tcDanhMuc.Location = new System.Drawing.Point(3, 59);
             this.tcDanhMuc.Name = "tcDanhMuc";
             this.tcDanhMuc.SelectedIndex = 0;
-            this.tcDanhMuc.Size = new System.Drawing.Size(432, 279);
+            this.tcDanhMuc.Size = new System.Drawing.Size(499, 279);
             this.tcDanhMuc.TabIndex = 1;
             // 
             // tabPage2
@@ -78,7 +78,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(424, 253);
+            this.tabPage2.Size = new System.Drawing.Size(491, 253);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Xét nghiệm";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(424, 253);
+            this.tabPage3.Size = new System.Drawing.Size(491, 253);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "chẩn đoán hình ảnh";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.tbICD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbICD.Location = new System.Drawing.Point(63, 3);
             this.tbICD.Name = "tbICD";
-            this.tbICD.Size = new System.Drawing.Size(372, 20);
+            this.tbICD.Size = new System.Drawing.Size(439, 20);
             this.tbICD.TabIndex = 2;
             this.tbICD.TextChanged += new System.EventHandler(this.tbICD_TextChanged);
             // 
@@ -131,7 +131,7 @@
             this.lb_icd_dachon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_icd_dachon.Location = new System.Drawing.Point(63, 27);
             this.lb_icd_dachon.Name = "lb_icd_dachon";
-            this.lb_icd_dachon.Size = new System.Drawing.Size(372, 29);
+            this.lb_icd_dachon.Size = new System.Drawing.Size(439, 29);
             this.lb_icd_dachon.TabIndex = 6;
             this.lb_icd_dachon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 341);
+            this.ClientSize = new System.Drawing.Size(505, 341);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";

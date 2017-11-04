@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsSelenium", "WindowsFormsSelenium\WindowsFormsSelenium.csproj", "{9EBB5ED3-C95C-4A6D-A774-D83BDF925A20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieLogin", "CookieLogin\CookieLogin.csproj", "{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EBB5ED3-C95C-4A6D-A774-D83BDF925A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EBB5ED3-C95C-4A6D-A774-D83BDF925A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EBB5ED3-C95C-4A6D-A774-D83BDF925A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EBB5ED3-C95C-4A6D-A774-D83BDF925A20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADAE9F43-96A4-412A-BB09-82C82C0DE255}
+	EndGlobalSection
+EndGlobal
