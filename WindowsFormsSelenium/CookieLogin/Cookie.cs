@@ -5,10 +5,11 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Specialized;
+using System.IO;
 
 namespace CookieLogin
 {
-    public class CookieAwareWebClient : WebClient
+    public class CookieRequest : WebClient
     {
         public void Login(string loginPageAddress, NameValueCollection loginData)
         {
@@ -32,15 +33,15 @@ namespace CookieLogin
            
             var response = request.GetResponse();
             response.Close();
-            MyCookieContainer = request.CookieContainer;
+            this.MyCookieContainer = request.CookieContainer;
         }
 
-        public CookieAwareWebClient(CookieContainer container)
+        public CookieRequest(CookieContainer container)
         {
             MyCookieContainer = container;
         }
 
-        public CookieAwareWebClient()
+        public CookieRequest()
           : this(new CookieContainer())
         { }
 
@@ -51,6 +52,21 @@ namespace CookieLogin
             var request = (HttpWebRequest)base.GetWebRequest(address);
             request.CookieContainer = this.MyCookieContainer;
             return request;
+        }
+
+        public string getHtmlPageStr(string address)
+        {
+            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(address);
+            myRequest.CookieContainer = this.MyCookieContainer;
+
+
+            HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+            Stream mydata = myResponse.GetResponseStream();
+            StreamReader sreader = new StreamReader(mydata, Encoding.UTF8);
+            string strdata = sreader.ReadToEnd();
+            mydata.Close();
+            sreader.Close();
+            return strdata;
         }
         
     }
