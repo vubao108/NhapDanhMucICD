@@ -84,7 +84,7 @@ namespace CookieLogin
                         string pdfLink = "http://guinhanvb.hatinh.gov.vn/guinhan/vbden.nsf/str/" + tmp.Substring(13, tmp.Length - 16);
                         dict["pdfLink"] = pdfLink;
                     }
-                    else if (extraType.Equals("doc"))
+                    else if (extraType.Equals("doc") || extraType.Equals("ocx"))
                     {
                         string tmp = node.Attributes["onclick"].Value;
                         string docLink = "http://guinhanvb.hatinh.gov.vn/guinhan/vbden.nsf/str/" + tmp.Substring(13, tmp.Length - 16);
