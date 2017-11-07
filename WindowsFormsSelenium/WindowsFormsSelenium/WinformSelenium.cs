@@ -14,14 +14,14 @@ using System.Threading;
 
 namespace WindowsFormsSelenium
 {
-    public partial class Form1 : Form
+    public partial class WinformSelenium : Form
     {
         private IWebDriver driver;
         
         private static String urlPage = "http://guinhanvb.hatinh.gov.vn/guinhan/index.nsf/frmShowData?openform&dbtype=vbden&hienthi=toanbo&noinhan=benhvienhuongson.hs&startpage=";
         private static int lastPage;
         
-        public Form1()
+        public WinformSelenium()
         {
             InitializeComponent();
         }

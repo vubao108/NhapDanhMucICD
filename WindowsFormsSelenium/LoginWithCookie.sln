@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsSelenium", "Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieLogin", "CookieLogin\CookieLogin.csproj", "{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumGetCookie", "WindowsFormsApp1\SeleniumGetCookie.csproj", "{6A4DD003-D48C-429C-BE67-D760983167FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayDulieuBHXH", "LayDulieuBHXH\LayDulieuBHXH.csproj", "{83717791-1D6B-4E14-91E1-42E03F153675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelWinform", "ExcelWinform\ExcelWinform.csproj", "{60D924FB-5444-4C63-B24B-6DEC6B42B636}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4DD003-D48C-429C-BE67-D760983167FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4DD003-D48C-429C-BE67-D760983167FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4DD003-D48C-429C-BE67-D760983167FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4DD003-D48C-429C-BE67-D760983167FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83717791-1D6B-4E14-91E1-42E03F153675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83717791-1D6B-4E14-91E1-42E03F153675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83717791-1D6B-4E14-91E1-42E03F153675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83717791-1D6B-4E14-91E1-42E03F153675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60D924FB-5444-4C63-B24B-6DEC6B42B636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D924FB-5444-4C63-B24B-6DEC6B42B636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D924FB-5444-4C63-B24B-6DEC6B42B636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60D924FB-5444-4C63-B24B-6DEC6B42B636}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

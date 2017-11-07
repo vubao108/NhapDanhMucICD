@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsSelenium
 {
-    partial class Form1
+    partial class WinformSelenium
     {
         /// <summary>
         /// Required designer variable.
