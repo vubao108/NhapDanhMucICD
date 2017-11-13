@@ -53,6 +53,37 @@ namespace CookieLogin
             request.CookieContainer = this.MyCookieContainer;
             return request;
         }
+        public string postRequest(string url, string data)
+        {
+            string result = null;
+
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.CookieContainer = this.MyCookieContainer;
+
+
+
+            var buffer = Encoding.ASCII.GetBytes(data);
+            request.ContentLength = buffer.Length;
+            var requestStream = request.GetRequestStream();
+            requestStream.Write(buffer, 0, buffer.Length);
+            requestStream.Close();
+
+            
+
+             var response = (HttpWebResponse)request.GetResponse();
+            Stream mydata = response.GetResponseStream();
+            StreamReader sreader = new StreamReader(mydata, Encoding.UTF8);
+            result = sreader.ReadToEnd();
+            response.Close();
+            mydata.Close();
+            sreader.Close();
+
+            return result;
+        }
 
         public string getHtmlPageStr(string address)
         {

@@ -32,6 +32,8 @@ namespace CookieLogin
             return htmlDoc.DocumentNode.SelectNodes(xpath);
         }
 
+      
+
         public string get_sokyhieu(HtmlNode current_node)
         {
             var xpath = "./td[3]";
@@ -66,6 +68,7 @@ namespace CookieLogin
             Dictionary<string,string> dict = new Dictionary<string,string>();
             dict.Add("pdfLink", "");
             dict.Add("docLink", "");
+            dict.Add("otherLink", "");
             var xpath = "//table[@id='tblMain']/tr[9]/tr/tr/td[2]/a";
             
             var list_el = htmlDoc.DocumentNode.SelectNodes(xpath);
@@ -79,12 +82,12 @@ namespace CookieLogin
                 {
                     var innerText = node.InnerText;
                     var extraType = innerText.Substring(innerText.Length - 3);
-                    if (extraType.Equals("pdf")) {
+                    if (extraType.Equals("pdf", StringComparison.OrdinalIgnoreCase)) {
                         string tmp = node.Attributes["onclick"].Value;
                         string pdfLink = "http://guinhanvb.hatinh.gov.vn/guinhan/vbden.nsf/str/" + tmp.Substring(13, tmp.Length - 16);
                         dict["pdfLink"] = pdfLink;
                     }
-                    else if (extraType.Equals("doc") || extraType.Equals("ocx"))
+                    else if (extraType.Equals("doc", StringComparison.OrdinalIgnoreCase) || extraType.Equals("ocx",StringComparison.OrdinalIgnoreCase))
                     {
                         string tmp = node.Attributes["onclick"].Value;
                         string docLink = "http://guinhanvb.hatinh.gov.vn/guinhan/vbden.nsf/str/" + tmp.Substring(13, tmp.Length - 16);
@@ -92,7 +95,15 @@ namespace CookieLogin
                     }
                     else
                     {
-                        
+                        string tmp = node.Attributes["onclick"].Value;
+                        string otherLink = "http://guinhanvb.hatinh.gov.vn/guinhan/vbden.nsf/str/" + tmp.Substring(13, tmp.Length - 16);
+                        if (string.IsNullOrEmpty(dict["otherLink"])){
+                            dict["otherLink"] = otherLink ;
+                        }
+                        else
+                        {
+                            dict["otherLink"] = dict["otherLink"] + "\n" + otherLink ;
+                        }
                     }
                 }
                 return dict;

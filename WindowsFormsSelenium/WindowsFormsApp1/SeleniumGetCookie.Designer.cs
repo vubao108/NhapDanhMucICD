@@ -39,6 +39,8 @@
             this.btGetData = new System.Windows.Forms.Button();
             this.tbSheet = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tbPostData = new System.Windows.Forms.TextBox();
+            this.btPOST = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btStart
@@ -47,7 +49,7 @@
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(75, 23);
             this.btStart.TabIndex = 0;
-            this.btStart.Text = "Start";
+            this.btStart.Text = "Login";
             this.btStart.UseVisualStyleBackColor = true;
             this.btStart.UseWaitCursor = true;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
@@ -58,6 +60,7 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(550, 20);
             this.tbAddress.TabIndex = 1;
+            this.tbAddress.Text = "http://daotaogdbhyt.baohiemxahoi.gov.vn/Account/Index";
             // 
             // label1
             // 
@@ -93,9 +96,11 @@
             this.tbGetRequest.Name = "tbGetRequest";
             this.tbGetRequest.Size = new System.Drawing.Size(550, 20);
             this.tbGetRequest.TabIndex = 1;
+            this.tbGetRequest.Text = "http://daotaogdbhyt.baohiemxahoi.gov.vn/DM_GOITHAUCHITIET/Index/6973";
             // 
             // tbHtml
             // 
+            
             this.tbHtml.Location = new System.Drawing.Point(45, 246);
             this.tbHtml.Multiline = true;
             this.tbHtml.Name = "tbHtml";
@@ -132,24 +137,44 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(417, 209);
+            this.label3.Location = new System.Drawing.Point(650, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Sheet";
+            this.label3.Text = "PostData";
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // tbPostData
+            // 
+            this.tbPostData.Location = new System.Drawing.Point(601, 46);
+            this.tbPostData.Multiline = true;
+            this.tbPostData.Name = "tbPostData";
+            this.tbPostData.Size = new System.Drawing.Size(311, 429);
+            this.tbPostData.TabIndex = 5;
+            // 
+            // btPOST
+            // 
+            this.btPOST.Location = new System.Drawing.Point(718, 20);
+            this.btPOST.Name = "btPOST";
+            this.btPOST.Size = new System.Drawing.Size(75, 23);
+            this.btPOST.TabIndex = 3;
+            this.btPOST.Text = "POST";
+            this.btPOST.UseVisualStyleBackColor = true;
+            this.btPOST.Click += new System.EventHandler(this.btPOST_Click);
             // 
             // SeleniumGetCookie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 487);
+            this.ClientSize = new System.Drawing.Size(924, 487);
             this.Controls.Add(this.tbSheet);
             this.Controls.Add(this.btGetData);
+            this.Controls.Add(this.tbPostData);
             this.Controls.Add(this.tbHtml);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btGetRequest);
+            this.Controls.Add(this.btPOST);
             this.Controls.Add(this.btGetCookie);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbGetRequest);
@@ -175,6 +200,8 @@
         private System.Windows.Forms.Button btGetData;
         private System.Windows.Forms.TextBox tbSheet;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbPostData;
+        private System.Windows.Forms.Button btPOST;
     }
 }
 

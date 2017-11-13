@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelHandle.cs" />
     <Compile Include="ExcelWinform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExcelWinform.Designer.cs">
       <DependentUpon>ExcelWinform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Process.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ExcelWinform.resx">

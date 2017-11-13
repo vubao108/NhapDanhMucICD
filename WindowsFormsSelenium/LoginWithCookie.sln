@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsSelenium", "WindowsFormsSelenium\WindowsFormsSelenium.csproj", "{9EBB5ED3-C95C-4A6D-A774-D83BDF925A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieLogin", "CookieLogin\CookieLogin.csproj", "{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieLogin_GetVanBan", "CookieLogin\CookieLogin_GetVanBan.csproj", "{9C84FBD0-74E7-461C-A3AF-FB6BA9035F43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumGetCookie", "WindowsFormsApp1\SeleniumGetCookie.csproj", "{6A4DD003-D48C-429C-BE67-D760983167FF}"
 EndProject
