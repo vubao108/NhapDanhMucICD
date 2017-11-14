@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookieLogin.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,7 @@ namespace CookieLogin
         private void Popup_Vanbanmoi_Load(object sender, EventArgs e)
         {
             if (this.NumRow > 0) {
-                dataGridView1.DataSource = DBConnection.GetDataByQuery($"call vu_get_last_vb_theo_id('{this.NumRow}')");
+                dataGridView1.DataSource = DAOImplement.get_vb_vua_lay(this.NumRow);
                 format_Datagridview();
             }
         }

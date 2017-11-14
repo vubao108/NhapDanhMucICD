@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.IO;
 
-namespace CookieLogin
+namespace CookieLogin.Logic
 {
     public class CookieRequest : WebClient
     {
         public void Login(string loginPageAddress, NameValueCollection loginData)
         {
-          
+
 
             var request = (HttpWebRequest)WebRequest.Create(loginPageAddress);
 
@@ -30,7 +29,7 @@ namespace CookieLogin
             requestStream.Close();
 
             request.CookieContainer = new CookieContainer();
-           
+
             var response = request.GetResponse();
             response.Close();
             this.MyCookieContainer = request.CookieContainer;
@@ -46,7 +45,7 @@ namespace CookieLogin
         { }
 
         public CookieContainer MyCookieContainer { get; private set; }
-        
+
         protected override WebRequest GetWebRequest(Uri address)
         {
             var request = (HttpWebRequest)base.GetWebRequest(address);
@@ -72,9 +71,9 @@ namespace CookieLogin
             requestStream.Write(buffer, 0, buffer.Length);
             requestStream.Close();
 
-            
 
-             var response = (HttpWebResponse)request.GetResponse();
+
+            var response = (HttpWebResponse)request.GetResponse();
             Stream mydata = response.GetResponseStream();
             StreamReader sreader = new StreamReader(mydata, Encoding.UTF8);
             result = sreader.ReadToEnd();
@@ -99,7 +98,7 @@ namespace CookieLogin
             sreader.Close();
             return strdata;
         }
-        
+
     }
 
 }

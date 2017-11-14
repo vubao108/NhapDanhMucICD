@@ -4,7 +4,7 @@ using System.Data;
 using System.Configuration;
 using System.Diagnostics;
 
-namespace CookieLogin
+namespace CookieLogin.DAO
 {
     public partial class DBConnection
     {

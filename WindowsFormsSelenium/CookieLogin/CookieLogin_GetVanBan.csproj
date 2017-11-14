@@ -49,17 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cookie.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DBConnection.cs" />
+    <Compile Include="Logic\BackgroundThread_Xuly.cs" />
+    <Compile Include="DAO\DAOImplement.cs" />
+    <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="FormCookieLoginAndGetData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCookieLoginAndGetData.Designer.cs">
       <DependentUpon>FormCookieLoginAndGetData.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParseHtml.cs" />
+    <Compile Include="Logic\CookieLoginRequest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logic\ParseHtml.cs" />
     <Compile Include="Popup_Vanbanmoi.cs">
       <SubType>Form</SubType>
     </Compile>
