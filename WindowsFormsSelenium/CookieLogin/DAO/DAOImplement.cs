@@ -30,9 +30,9 @@ namespace CookieLogin.DAO
           return   DBConnection.GetDataByQuery($"call vu_get_last_vb({vb_num})");
         }
 
-        public static void insert_new_vanban(string sokyhieu, string tieude, string noigui, string ngaynhan, string pdfurl, string infourl, string docurl, string otherurl )
+        public static void insert_new_vanban(string sokyhieu, string tieude, string noigui, string ngaynhan, string pdfurl, string infourl, string docurl, string otherurl, string ngaybanhanh, string nguoiky, string chucvu, string dokhan, string loaivanban )
         {
-            DBConnection.ExecuteQuery($"call vu_insert_vanban('{sokyhieu}','{tieude}','{noigui}','{ngaynhan}','{pdfurl}','{infourl}','{docurl}','{otherurl}')");
+            DBConnection.ExecuteQuery($"call vu_insert_vanban('{sokyhieu}','{tieude}','{noigui}','{ngaynhan}','{pdfurl}','{infourl}','{docurl}','{otherurl}','{ngaybanhanh}','{nguoiky}','{chucvu}','{dokhan}','{loaivanban}')");
         }
 
         public static DataTable get_vb_vua_lay(int numrow)

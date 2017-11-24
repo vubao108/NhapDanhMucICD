@@ -109,5 +109,38 @@ namespace CookieLogin
                 return dict;
             }
         }
+        public string get_nguoi_ky()
+        {
+            string xpath = "//*[@id='tblMain']/tr[7]/td[2]";
+            var nguoi_ky = htmlDoc.DocumentNode.SelectSingleNode(xpath).InnerText;
+            return nguoi_ky;
+
+        }
+        public string get_chuc_vu()
+        {
+            string xpath = "//*[@id='tblMain']/tr[8]/td[2]";
+            return htmlDoc.DocumentNode.SelectSingleNode(xpath).InnerText;
+
+        }
+        public string get_do_khan()
+        {
+            string xpath = "//*[@id='tblMain']/tr[9]/td[2]";
+            return htmlDoc.DocumentNode.SelectSingleNode(xpath).InnerText;
+
+        }
+        public string get_loai_van_ban()
+        {
+            string xpath = "//*[@id='tblMain']/tr[9]/tr/td[2]";
+            return htmlDoc.DocumentNode.SelectSingleNode(xpath).InnerText;
+
+        }
+        public string get_ngay_ban_hanh()
+        {
+            string xpath = "//*[@id='tblMain']/tr[4]/td[2]";
+            return htmlDoc.DocumentNode.SelectSingleNode(xpath).InnerText;
+
+        }
     }
+  
 }
+

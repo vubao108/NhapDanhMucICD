@@ -68,10 +68,15 @@ namespace CookieLogin
                         string pdfurl = linkDict["pdfLink"];
                         string docurl = linkDict["docLink"];
                         string otherurl = linkDict["otherLink"];
+                        string ngay_ban_hanh = detailParser.get_ngay_ban_hanh();
+                        string nguoi_ky = detailParser.get_nguoi_ky();
+                        string chuc_vu = detailParser.get_chuc_vu();
+                        string do_khan = detailParser.get_do_khan();
+                        string loai_van_ban = detailParser.get_loai_van_ban();
 
 
                       
-                        DAOImplement.insert_new_vanban(sokyhieu, tieude, noigui, ngaynhan, pdfurl, infourl, docurl, otherurl);
+                        DAOImplement.insert_new_vanban(sokyhieu, tieude, noigui, ngaynhan, pdfurl, infourl, docurl, otherurl, ngay_ban_hanh, nguoi_ky, chuc_vu, do_khan, loai_van_ban);
                         break_flag = 0;
 
                         ++get_count;
