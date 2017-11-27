@@ -52,9 +52,16 @@ namespace CookieLogin
                 Invoke(new MethodInvoker(() => update_sovb_dalay(sovb)));
             }
             else
-            {
-                lbState.Text = String.Format("Đang xử lý: Đã lấy dc: {0} văn bản mới ", sovb);
-                updateTable();
+            {   if (sovb >= 0)
+                {
+
+                    lbState.Text = String.Format("Đang xử lý: Đã lấy dc: {0} văn bản mới ", sovb);
+                    updateTable();
+                }
+                else
+                {
+                    lbState.Text = lbState.Text + "\n" +  $"{DateTime.Now.ToString("yyyy/MM/dd - HH:mm:ss zzz")} Đang đợi 5 phút trước khi check có văn bản mới ";
+                }
             }
         }
    

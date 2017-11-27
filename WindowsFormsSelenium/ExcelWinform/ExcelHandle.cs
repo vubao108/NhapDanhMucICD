@@ -114,8 +114,9 @@ namespace ExcelWinform
         */
 
 
-            // xlWorkBook.SaveAs("d:\\Work\\csharp-Excel.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, 
+            // xlWorkBook.SaveAs("d:\\Work\\csharp-Excel.xls", Excel.XlFileFormat.xlWorkbookNorimal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, 
         }
+        //public void writeFromList(int)
         public void writeCell(int row, int col, string data)
         {
             xlWorkSheet.Cells[row, col] = data;
