@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using CookieLogin.DAO;
 using CookieLogin.Logic;
 using System.Threading;
+using System.Data;
 
 namespace CookieLogin
 {
@@ -15,7 +16,7 @@ namespace CookieLogin
     {
         public delegate void Del_UpdateUI(int sovanban_dalay);
         //public Del_UpdateUI updateUI;
-        public static int xuly(int break_max, Del_UpdateUI del_UpdateUI = null)
+        public static void xuly( Del_UpdateUI del_UpdateUI = null)
         {
 
             var loginAddress = "http://guinhanvb.hatinh.gov.vn/names.nsf?Login";
@@ -38,21 +39,17 @@ namespace CookieLogin
 
 
                 ParseHtml parser = new ParseHtml(strdata);
-                string totalItem = parser.get_total_item();
-                int lastPage = int.Parse(totalItem) / 20 + 1;
+                int totalItem = int.Parse(parser.get_total_item());
+                int lastPage = totalItem / 20 + 1;
+                int tongso_in_db = DAOImplement.getTongso_vb();
 
-                int break_flag = 0;
-                if (break_max == 0)
-                {
-                    break_max = 20;
-                }
 
-                for (int page = 1; page <= lastPage && break_flag < break_max; page++)
+                for (int page = 1; page <= lastPage && tongso_in_db < totalItem ; page++)
                 {
 
                     parser = new ParseHtml(client.getHtmlPageStr(baseAddress + page));
                     var list_node = parser.get_list_tr();
-                    for (int i = 2; i < list_node.Count && break_flag < break_max; i++)
+                    for (int i = 2; i < list_node.Count && tongso_in_db < totalItem; i++)
                     {
                         HtmlNode current_node = list_node[i];
                         string sokyhieu = parser.get_sokyhieu(current_node);
@@ -80,25 +77,52 @@ namespace CookieLogin
 
 
                             DAOImplement.insert_new_vanban(sokyhieu, tieude, noigui, ngaynhan, pdfurl, infourl, docurl, otherurl, ngay_ban_hanh, nguoi_ky, chuc_vu, do_khan, loai_van_ban);
-                            break_flag = 0;
+                            tongso_in_db++;
 
                             ++get_count;
                             del_UpdateUI?.Invoke(get_count);
                         }
                         else
                         {
-                            ++break_flag;
+                           
                         }
 
                     }
                 }
+                update_to_oracle();
                 del_UpdateUI?.Invoke(-1);
                 Thread.Sleep(5*60*1000);
             }
-            return get_count;
+            
         }
 
-    }
+        private static void update_to_oracle()
+        {
+            DataTable dt = DAOImplement.get_vb_chua_insert_to_oracle();
+            foreach( DataRow r in dt.Rows)
+            {
+                int id = int.Parse(r["id"].ToString());
+                string trich_yeu = r["tieu_de"].ToString();
+                string so_hieu = r["so_ky_hieu"].ToString();
+                string tmp_ngay_ban_hanh = r["ngay_ban_hanh"].ToString();
+                string ngay_ban_hanh = tmp_ngay_ban_hanh.Substring(0, 10);
+                                             
+                string xuat_xu = r["noi_gui"].ToString();
+                string nguoi_ky = r["nguoi_ky"].ToString();
+                string loai_cv = r["loai_van_ban"].ToString();
+                string do_khan = r["do_khan"].ToString();
 
+                int ma_van_ban = DAOOracleImplement.insert_new_vanban_to_dm(trich_yeu, so_hieu, 
+                                                                    ngay_ban_hanh, xuat_xu,
+                                                                    nguoi_ky, loai_cv, do_khan);
+                if (ma_van_ban > 0)
+                {
+                    DAOImplement.update_ma_van_ban(id, ma_van_ban);
+                }
+            }
+        }
     }
+    
+
+}
 

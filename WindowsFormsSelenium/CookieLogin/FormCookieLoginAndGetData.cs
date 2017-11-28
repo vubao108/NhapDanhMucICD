@@ -83,14 +83,14 @@ namespace CookieLogin
             int break_max;
             int.TryParse(tbBreak.Text, out break_max);
 
-            Task<int> getDataTask = Task.Run(() => BackgroundThread_Xuly.xuly(break_max, update_sovb_dalay));
+            Task getDataTask = Task.Run(() => BackgroundThread_Xuly.xuly(update_sovb_dalay));
             //lbState.Text = "Đang xử lý";
             //lbState.Enabled = false;
 
             await getDataTask;
             updateTable();
-            sovanbanmoi = getDataTask.Result;
-            lbState.Text = String.Format("Đã xử lý xong. Lấy được : {0} văn bản mới",sovanbanmoi) ;
+            // sovanbanmoi = getDataTask.Result;
+            //lbState.Text = String.Format("Đã xử lý xong. Lấy được : {0} văn bản mới",sovanbanmoi) ;
             btGetData.Enabled = true;
             lbState.Enabled = true;
             tbBreak.Enabled = true;

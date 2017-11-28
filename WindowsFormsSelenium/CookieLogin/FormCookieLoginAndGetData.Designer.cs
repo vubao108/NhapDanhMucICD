@@ -38,7 +38,6 @@
             this.lbTongso = new System.Windows.Forms.Label();
             this.btRefresh = new System.Windows.Forms.Button();
             this.tbCellContent = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,21 +132,11 @@
             this.tbCellContent.TabIndex = 9;
             this.tbCellContent.Text = "label2";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(415, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FormCookieLoginAndGetData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 462);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tbCellContent);
             this.Controls.Add(this.btRefresh);
             this.Controls.Add(this.lbTongso);
@@ -181,6 +170,5 @@
         private System.Windows.Forms.Label lbTongso;
         private System.Windows.Forms.Button btRefresh;
         private System.Windows.Forms.Label tbCellContent;
-        private System.Windows.Forms.Button button1;
     }
 }
