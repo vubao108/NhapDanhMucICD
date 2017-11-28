@@ -41,7 +41,7 @@ namespace CookieLogin.DAO
         }
         public static DataTable get_vb_chua_insert_to_oracle()
         {
-            return DBConnection.GetDataByQuery($"call vu_lay_van_ban_chua_insert_to_oracle()");
+            return DBConnection.GetDataByQuery("call vu_lay_van_ban_chua_insert_to_oracle()");
         }
         public static void update_ma_van_ban(int _id, int _mavanban)
         {

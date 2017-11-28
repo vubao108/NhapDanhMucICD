@@ -17,8 +17,9 @@ namespace CookieLogin.DAO
                 string username = appSettings["username"] ?? "Not Found";
                 string password = appSettings["password"] ?? "Not Found";
                 string db = appSettings["db"] ?? "Not Found";
-                return "Server=" + host + ";Database=" + db + ";Uid=" + username + ";Pwd=" + password + ";Port=3306; Charset=utf8;";
+                return "Server=" + host + ";Database=" + db + ";Uid=" + username + ";Pwd=" + password + ";Port=3306; Charset=utf8; Convert Zero Datetime =True";
             }
+
             catch (ConfigurationErrorsException)
             {
                 Console.WriteLine("Error reading app settings");

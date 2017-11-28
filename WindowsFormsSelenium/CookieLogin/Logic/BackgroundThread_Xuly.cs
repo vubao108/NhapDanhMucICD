@@ -99,26 +99,34 @@ namespace CookieLogin
         private static void update_to_oracle()
         {
             DataTable dt = DAOImplement.get_vb_chua_insert_to_oracle();
-            foreach( DataRow r in dt.Rows)
+            if (dt != null)
             {
-                int id = int.Parse(r["id"].ToString());
-                string trich_yeu = r["tieu_de"].ToString();
-                string so_hieu = r["so_ky_hieu"].ToString();
-                string tmp_ngay_ban_hanh = r["ngay_ban_hanh"].ToString();
-                string ngay_ban_hanh = tmp_ngay_ban_hanh.Substring(0, 10);
-                                             
-                string xuat_xu = r["noi_gui"].ToString();
-                string nguoi_ky = r["nguoi_ky"].ToString();
-                string loai_cv = r["loai_van_ban"].ToString();
-                string do_khan = r["do_khan"].ToString();
-
-                int ma_van_ban = DAOOracleImplement.insert_new_vanban_to_dm(trich_yeu, so_hieu, 
-                                                                    ngay_ban_hanh, xuat_xu,
-                                                                    nguoi_ky, loai_cv, do_khan);
-                if (ma_van_ban > 0)
+                foreach (DataRow r in dt.Rows)
                 {
-                    DAOImplement.update_ma_van_ban(id, ma_van_ban);
+                    int id = int.Parse(r["id"].ToString());
+                    string trich_yeu = r["tieu_de"].ToString();
+                    string so_hieu = r["so_ky_hieu"].ToString();
+                    string tmp_ngay_ban_hanh = r["ngay_ban_hanh"].ToString();
+                    string ngay_ban_hanh = tmp_ngay_ban_hanh.Substring(0, 10);
+                    if (ngay_ban_hanh == "01/01/0001")
+                    {
+                        ngay_ban_hanh = "";
+                    }
+
+                    string xuat_xu = r["noi_gui"].ToString();
+                    string nguoi_ky = r["nguoi_ky"].ToString();
+                    string loai_cv = r["loai_van_ban"].ToString();
+                    string do_khan = r["do_khan"].ToString();
+
+                    int ma_van_ban = DAOOracleImplement.insert_new_vanban_to_dm(trich_yeu, so_hieu,
+                                                                        ngay_ban_hanh, xuat_xu,
+                                                                        nguoi_ky, loai_cv, do_khan);
+                    if (ma_van_ban > 0)
+                    {
+                        DAOImplement.update_ma_van_ban(id, ma_van_ban);
+                    }
                 }
+                
             }
         }
     }
